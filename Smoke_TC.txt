@@ -1,0 +1,64 @@
+Feature: Loan Amortiser
+
+  Scenario: Smoke test of WebdriverIO infrastructure for challenge
+
+    When the user accesses the Loan Amortiser
+    Then the user has the ability to capture details about the loan with the following default values:
+      | Loan Amount | Loan Term | Interest Rate |
+      | 30000       | 12        | 7.5           |
+
+   Given the loan Amortiser application 
+   When the user enter the <Loan Amount> <Loan Term> <Interest Rate> deatils 
+   and click calculate
+   Then the user able to see the <MONTHLY REPAYMENT AMOUNT> 
+
+   Given the loan Amortiser application 
+   When the user enter the <Loan Amount> <Loan Term> <Interest Rate> deatils 
+   and click calculate
+   Then the user able to see the <TOTAL INTEREST REPAYABLE> 
+
+   Given the loan Amortiser application 
+   When the user enter the <Loan Amount> <Loan Term> <Interest Rate> deatils 
+   and click calculate
+   Then the user able to see the <TOTAL AMOUNT REPAYABLE> 
+
+   Given the loan Amortiser application 
+   When the user enter the <Loan Amount> <Loan Term> <Interest Rate> deatils 
+   and click calculate
+   Then the sum of <MONTHLY REPAYMENT AMOUNT> and <TOTAL INTEREST REPAYABLE> equals to <TOTAL AMOUNT REPAYABLE>
+
+   Given the loan Amortiser application 
+   When the user enter the <Loan Amount> <Loan Term> <Interest Rate> deatils 
+   and click calculate
+   Then the <PAYMENT> amount should be same for all the installments
+
+   Given the loan Amortiser application 
+   When the user enter the <Loan Amount> <Loan Term> <Interest Rate> deatils 
+   and click calculate
+   Then the <PRINCIPAL> amount should be in increasing order for every installment
+
+   Given the loan Amortiser application 
+   When the user enter the <Loan Amount> <Loan Term> <Interest Rate> deatils 
+   and click calculate
+   Then the <INTEREST> amount should be in decreasing order for every installment
+
+   Given the loan Amortiser application 
+   When the user enter the <Loan Amount> <Loan Term> <Interest Rate> deatils 
+   and click calculate
+   Then the <BALANCE> amount should be in decreasing order for every installment
+
+   Given the loan Amortiser application 
+   When the user enter the <Loan Amount> <Loan Term> <Interest Rate> deatils 
+   and click calculate
+   Then the <BALANCE> amount should be zero for the last installment
+
+   Given the loan Amortiser application 
+   When the user enter the <Loan Amount> <Loan Term> <Interest Rate> deatils 
+   sssand click calculate
+   Then the <Loan Term> number and number of <INSTALMENT> should be same
+
+
+
+
+  
+
